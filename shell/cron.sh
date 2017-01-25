@@ -11,10 +11,9 @@ if [ -d "../storage/php_request" ]; then
     do
         if [[ $(basename $f) =~ ^[-+]?[0-9]+$ ]]
         then
-
-            if [ -f "$FILE_model.def" ];
+            if [ -f "../storage/php_request/$(basename $f)_model.def" ];
             then
-               model=$( cat "$FILE_model.def" | tr '\n' '')
+               model=$( cat "../storage/php_request/$(basename $f)_model.def")
             else
                model=$DEFAULT_MODEL
             fi
